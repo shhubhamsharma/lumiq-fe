@@ -1,20 +1,55 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
+<div id="wrapper">
+      <div id="phone">
+        <div id="numberDisplay">
+          <input type="text" [(ngModel)]="code">
+        </div>
+        <div id="numberDisplay" *ngIf="superHeroName">
+          Calling {{superHeroName}}
+        </div>
+        <div id="dialpad" class="button-3" *ngIf="enableDialpad">
+          <ul>
+            <li id="1" class="first"><span>1</span></li>
+            <li id="2" (click)="name(2)">
+              <span>2</span>
+              <sub>ABC</sub>
+            </li>
+            <li id="3" class="last" (click)="name(3)">
+              <span>3</span>
+              <sub>DEF</sub>
+            </li>
+            <li class="first" id="4" (click)="name(4)">
+              <span>4</span>
+              <sub>GHI</sub>
+            </li>
+            <li id="5" (click)="name(5)">
+              <span>5</span>
+              <sub>JKL</sub>
+            </li>
+            <li class="last" id="6" (click)="name(6)">
+              <span>6</span>
+              <sub>MNO</sub>
+            </li>
+            <li class="first" id="7" (click)="name(7)">
+              <span>7</span>
+              <sub>PQRS</sub>
+            </li>
+            <li id="8" (click)="name(8)"><span>8</span>
+              <sub>TUV</sub>
+            </li>
+            <li class="last" id="9" (click)="name(9)">
+              <span>9</span>
+              <sub>WXYZ</sub>
+            </li>
+          </ul>
+        </div>
+        <div id="actions" class="button-3 deactive">
+          <ul>
+            <li href="" (click)="call()" class="call">Call</li>
+            <li id="0" (click)="name(0);enableDialpad = true;">
+              <span>0</span></li>
+            <li href="" class="clear" (click)="clear();enableDialpad =false;">Clear</li>
+          </ul>
+        </div>
+      </div>
+      </div>
+    
